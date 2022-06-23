@@ -18,6 +18,6 @@ export class AppController {
   @UseGuards(AuthenticatedGuard)
   @Get('protected')
   getHello(@Request() req): string {
-    return req.user;
+    return this.authService.login(req.user);
   }
 }
